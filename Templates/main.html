@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:title" content="Multi Disease Predictor">
+  <meta name="authors" content="Bhumit Yash Ramiz Kishan">
+  <meta name="og:image" content="static/logo1.png">
+  <meta name="Keywords"
+    content="Flask, Machine Learning, Deep Learning, Artificial Intelligence, AI, ML,DL, Web Development">
+  <meta name="description" content="A Machine Learning and Deep Learning based webapp for Multiple Disease Prediction.">
+  <title>Multi-Disease Predictor</title>
+  <link rel="icon" href="{{ url_for('static', filename = 'logo.png') }}" type="image/icon type">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+  </script>
+
+  <style>
+    *{
+      font-family: 'Ubuntu', sans-serif;
+    }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background-color: grey;
+    }
+
+    header {
+      height: 50px;
+    }
+
+    footer {
+      height: 75px;
+      background: black;
+    }
+
+    /* Trick */
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      padding: 10px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <a href="{{ url_for('home') }}"><img class="ms-2 ps-2" src="{{ url_for('static', filename = 'BVM_logo.png') }} "
+        height="70px" width="80px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('cancerPage') }}">Cancer</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('malariaPage') }}">Malaria</a>
+        </li>
+      </ul>
+    </div>
+    <a href="{{ url_for('home') }}"><img class="pe-2 " src="{{ url_for('static', filename = 'download.png') }} "
+        height="60px" width="80px"></a>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <main>
+    <div class="container-fluid" style="margin-bottom: 20px;">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </main>
+  <footer >
+    <center>
+      <p style="color: white;">Made with <span style="color: red;">&hearts;</span> By Bhumit,Ramiz,Yash,Kishan </p>
+      </li>
+      </ul>
+    </center>
+  </footer>
+</body>
+
+</html>

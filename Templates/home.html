@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+<div class="container">
+    <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 10px black;">
+        <h2>Multi-Disease Detection And Prediction WebApp</h2>  
+        <p>These Machine Learning models and Deep Leaning models are trained on large datasets and thousands of images.</p>
+        <br>
+        <h2>Model Accuracies:</h2>
+        <ul>
+            <li>Diabetes Model: <strong>81%</strong></li>
+            <li>Cancer Type Model: <strong>82.25%</strong></li>
+            <li>Heart Disease Model: <strong>85.25%</strong></li>
+            <li>Malaria Model: <strong>95.43%</strong></li>
+        </ul>
+        <br>
+        <h3>Information about the Diseases which this webApp can predict.</h3>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Diabetes</h4>
+                <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Urinating often.</li>
+                    <li>Feeling very thirsty.</li>
+                    <li>Extreme fatigue.</li>
+                    <li>Blurry vision.</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Heart</h4>
+                <p>Heart disease describes a range of conditions that affect your heart.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Chest pain, chest tightness, chest pressure and chest discomfort (angina)</li>
+                    <li>Shortness of breath.</li>
+                    <li>Pain, numbness, weakness or coldness in your legs or arms if the blood vessels in those parts of your body are narrowed.</li>
+                    <li>Pain in the neck, jaw, throat, upper abdomen or back.</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Cancer</h4>
+                <p>Cancer is a disease in which some of the body's cells grow uncontrollably and spread to other parts of the body.
+
+                    A cancerous tumor is malignant, meaning it can grow and spread to other parts of the body. A benign tumor means the tumor can grow but will not spread.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Lump or area of thickening that can be felt under the skin.</li>
+                    <li>Skin changes, such as yellowing, darkening or redness of the skin, sores that won't heal, or changes to existing moles.</li>
+                    <li>Changes in bowel or bladder habits.</li>
+                    <li>Weight changes, including unintended loss or gain.</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Malaria</h4>
+                <p>Malaria is a mosquito-borne infectious disease that affects humans and other animals. Malaria causes symptoms that typically include fever, tiredness, vomiting, and headaches. In severe cases it can cause yellow skin, seizures, coma, or death. Symptoms usually begin ten to fifteen days after being bitten by an infected mosquito. If not properly treated, people may have recurrences of the disease months later.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Fever. This is the most common symptom.</li>
+                    <li>Chills</li>
+                    <li>Headache</li>
+                    <li>Nausea and vomiting</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+
+    </div>
+</div>
+{% endblock %}
